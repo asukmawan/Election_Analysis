@@ -29,7 +29,8 @@ The analysis of the election show that:
 
 The election results summary can be found saved in the [election_results.txt](analysis/election_analysis.net)
 
-    <img src="Resources/election_results.png></img>
+<img src="Resources/election_results.png></img>
+
 ## Challenge Overview
 
 The purpose of the election analysis audit was to write a script to deliver the following information:
