@@ -34,26 +34,28 @@ with open(file_to_load) as election_data:
             candidate_votes[candidate_name] = 0
         # Add a vote to that candidate's count
         candidate_votes[candidate_name] += 1
-    # Save the results to our text file.
-    with open(file_to_save, "w") as txt_file:
-        # Print the final vote count to the terminal.
-        election_results = (
-            f"\nElection Results\n"
-            f"-------------------------\n"
-            f"Total Votes: {total_votes:,}\n"
-            f"-------------------------\n"
-        )
-        print(election_results, end="") # end="" parameter is here to ensure nothing will be printed on the last line when election_results is printed, and anything after will be printed on a newline
-        # Save the final vote count to the text file.
-        txt_file.write(election_results)
+# Save the results to our text file.
+with open(file_to_save, "w") as txt_file:
+    # Print the final vote count to the terminal.
+    election_results = (
+        f"\nElection Results\n"
+        f"-------------------------\n"
+        f"Total Votes: {total_votes:,}\n"
+        f"-------------------------\n"
+    )
+    print(election_results, end="") # end="" parameter is here to ensure nothing will be printed on the last line when election_results is printed, and anything after will be printed on a newline
+    # Save the final vote count to the text file.
+    txt_file.write(election_results)
     for candidate_name in candidate_votes:
         # Retrieve vote count and percentage.
         votes = candidate_votes[candidate_name]
         vote_percentage = float(votes) / float(total_votes) * 100
         # Print each candidate, their voter count, and percentage to the
         # terminal.
-        # print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
-
+        candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        print(candidate_results)
+        # Save the candidate results to our text file.
+        txt_file.write(candidate_results)
         # Determine winning vote count, winning percentage, and candidate.
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
