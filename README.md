@@ -29,7 +29,7 @@ The analysis of the election show that:
 
 The election results summary can be found saved in the [election_results.txt](analysis/election_analysis.net)
 
-<img src="Resources/election_results.png></img>
+<img src="Resources/election_results.png"></img>
 
 ## Challenge Overview
 
